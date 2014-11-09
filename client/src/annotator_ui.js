@@ -2313,6 +2313,7 @@ var AnnotatorUI = (function($, window, undefined) {
           action: 'deleteSpan',
           collection: coll,
           'document': doc,
+          username: sessionStorage.getItem("username"),
         });
         spanOptions.offsets = JSON.stringify(spanOptions.offsets);
         dispatcher.post('ajax', [spanOptions, 'edited']);
@@ -2467,6 +2468,7 @@ var AnnotatorUI = (function($, window, undefined) {
           collection: coll,
           'document': doc,
           type: type,
+          username: sessionStorage.getItem("username"),
           comment: $('#span_notes').val()
         });
 
