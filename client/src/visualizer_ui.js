@@ -1962,7 +1962,10 @@ var VisualizerUI = (function($, window, undefined) {
               } else {
                 user = _user;
                 $('#auth_button').val('Logout ' + user);
-                $('#auth_user').val('');
+                //$('#auth_user').val('');
+
+		localStorage.setItem('username',user);
+
                 $('#auth_pass').val('');
                 $('.login').show();
                 dispatcher.post('user', [user]);
