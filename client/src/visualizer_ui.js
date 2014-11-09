@@ -1964,7 +1964,7 @@ var VisualizerUI = (function($, window, undefined) {
                 $('#auth_button').val('Logout ' + user);
                 //$('#auth_user').val('');
 
-		localStorage.setItem('username',user);
+		sessionStorage.setItem('username',user);
 
                 $('#auth_pass').val('');
                 $('.login').show();
@@ -1983,6 +1983,7 @@ var VisualizerUI = (function($, window, undefined) {
             $('.login').hide();
             dispatcher.post('user', [null]);
           }]);
+          sessionStorage.removeItem('username');
         } else {
           dispatcher.post('showForm', [authForm]);
         }
