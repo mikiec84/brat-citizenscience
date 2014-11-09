@@ -28,6 +28,8 @@ from common import ProtocolError
 from filelock import file_lock
 from message import Messager
 
+from session import get_session
+import sys
 
 ### Constants
 # The only suffix we allow to write to, which is the joined annotation file
@@ -295,7 +297,11 @@ class Annotations(object):
         if not input_files:
             # Our first attempts at finding the input by checking suffixes
             # failed, so we try to attach know suffixes to the path.
-            sugg_path = document + '.' + JOINED_ANN_FILE_SUFF
+
+            user = get_session().get('user')
+            sugg_path = document + '.' + user + '.' + JOINED_ANN_FILE_SUFF
+            # print >> sys.stderr, "_select_input_files / sugg_path: "+sugg_path
+
             if isfile(sugg_path):
                 # We found a joined file by adding the joined suffix
                 input_files = [sugg_path]
