@@ -310,11 +310,13 @@ rect.shadow_EditHighlight {
 .sentnum text {
   fill: #999999;
   text-anchor: end;
+  visibility: hidden;
 }
 
 .sentnum path {
   stroke: #999999;
   stroke-width: 1px;
+  visibility: hidden;
 }
 
 .span_cue {
