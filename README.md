@@ -49,7 +49,7 @@ brat does this by:
 
 brat itself is available under the permissive [MIT License][mit] but
 incorporates software using a variety of open-source licenses, for details
-please see see LICENSE.md.
+please see LICENSE.md.
 
 [mit]:  http://opensource.org/licenses/MIT
 
